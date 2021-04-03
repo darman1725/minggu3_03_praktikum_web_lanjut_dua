@@ -35,4 +35,3 @@ Route::get('/index', [App\Http\Controllers\IndexController::class, 'index'])->na
 /*Cara 2 Tanpa Controller*/ 
 //Route::get('/index', function() {return view('index'); })->name('index');
 
-
