@@ -19,15 +19,20 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'home']);
+// Halaman Menu
+Route::get('/menu', [App\Http\Controllers\MenuController::class, 'menu'])->name('menu');;
 
-Route::get('/products/{produk}', [App\Http\Controllers\ProductsController::class, 'products']);
+// Halaman Contact
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'])->name('contact');
 
-Route::get('/news/{tanggal}', [App\Http\Controllers\NewsController::class, 'news']);
+// Halaman Today-Special
+Route::get('/today-special', [App\Http\Controllers\Today_SpecialController::class, 'todaySpecial'])->name('today-special');
 
-Route::get('/programs/{prog}', [App\Http\Controllers\ProgramController::class, 'programs']);
+// Halaman Index //
+/*Cara 1 Dengan Controller*/   
+Route::get('/index', [App\Http\Controllers\IndexController::class, 'index'])->name('index');
 
-Route::get('/aboutUs', [App\Http\Controllers\AboutUsController::class, 'about']);
+/*Cara 2 Tanpa Controller*/ 
+//Route::get('/index', function() {return view('index'); })->name('index');
 
-Route::get('/contactUs', [App\Http\Controllers\ContactUsController::class, 'contact']);
 
